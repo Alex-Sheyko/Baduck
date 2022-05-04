@@ -20,8 +20,8 @@ class Board extends React.Component {
 
     handleClick(i) {
         const squares = this.state.squares.slice();
-        console.log(squares)
         squares[i] = this.state.bIsNext ? 'B' : 'W';
+        console.log(squares[i])
         this.setState({
             squares: squares,
             bIsNext: !this.state.bIsNext,
@@ -37,7 +37,7 @@ class Board extends React.Component {
     }
 
     render() {
-        const status = 'Next player: Black';
+        const status = 'Aktueller Spieler: ' + (this.state.bIsNext ? 'Black' : 'White');
 
         return (
             <div>
